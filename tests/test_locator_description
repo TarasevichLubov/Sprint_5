@@ -1,0 +1,26 @@
+Страница - https://stellarburgers.nomoreparties.site/
+1. .//a[@href='/account'] - кнопка "Личный кабинет"
+2. //div/header/nav/a[@class = 'AppHeader_header__link__3D_hX']  - кнопка "Личный кабинет"
+3. .//div/form/button[text()='Войти'] - кнопка «Войти»
+
+Страница - https://stellarburgers.nomoreparties.site/login
+1. .//button[text()='Зарегистрироваться'] - ссылка "Зарегистрироваться".
+2. .//fieldset[1]//input") - поле "Email"
+3. .//fieldset[2]//input") - поле "Пароль"
+4. .//button[text()='Войти'] - кнопка "Войти"
+
+Страница - https://stellarburgers.nomoreparties.site/register
+1. .//fieldset[1]//input") - поле "Логин"
+2. .//fieldset[2]//input") - поле "Email"
+3. .//fieldset[3]//input") - поле "Пароль"
+4. .//button[text()='Зарегистрироваться'] - кнопка "Зарегистрироваться"
+5. .//fieldset[3]//p[@class='input__error text_type_main-default'] - сообщение об ошибке при вводе некорректного пароля
+6. .//section[2]//div//button[@class = 'button_button__33qZ0 button_button_type_primary__1O7Bx button_button_size_large__G21Vg'] - кнопка оформить заказ
+
+Страница - https://stellarburgers.nomoreparties.site/account/profile
+1. .//header/nav/ul/li[1]/a[@href=\'/\']' - кнопка "Конструктор"
+2. .//ul/li[3]/button[text()='Выход'] - кнопка "Выход"
+3. .//div/header/nav/div/a[@href=\'/\']' = логотип "Stellar Burgers"
+
+Страница - https://stellarburgers.nomoreparties.site/forgot-password
+1. //a[@href='/login'] - ссылка зарегистрироваться

@@ -1,0 +1,44 @@
+from selenium.webdriver.common.by import By
+from selenium.webdriver.support import expected_conditions
+from selenium.webdriver.support.wait import WebDriverWait
+from tests.data import e_mail, passwd
+
+
+class TestPersonalAccount:
+    # Переход по клику на «Личный кабинет».
+    def test_user_click_personal_account(self, driver):
+        driver.get("https://stellarburgers.nomoreparties.site/")
+        driver.find_element(By.XPATH, "//a[@href='/account']").click()
+        current_url = driver.current_url
+        assert current_url == 'https://stellarburgers.nomoreparties.site/login'
+
+    # Переход по клику на «Конструктор»
+    def test_user_click_builder_in_personal_account(self, driver):
+        driver.get("https://stellarburgers.nomoreparties.site/login")
+        driver.find_element(By.XPATH, ".//fieldset[1]//input").send_keys(e_mail)
+        driver.find_element(By.XPATH, ".//fieldset[2]//input").send_keys(passwd)
+        driver.find_element(By.XPATH, ".//button[text()='Войти']").click()
+        driver.find_element(By.XPATH, ".//a[@href='/account']").click()
+        driver.find_element(By.XPATH, './/header/nav/ul/li[1]/a[@href=\'/\']').click()
+        current_url = driver.current_url
+        assert current_url == 'https://stellarburgers.nomoreparties.site/'
+
+        driver.find_element(By.XPATH, "//a[@href='/account']").click()
+        WebDriverWait(driver, 3).until(expected_conditions.visibility_of_element_located(
+            (By.XPATH, ".//button[text()='Выход']")))
+        driver.find_element(By.XPATH, ".//ul/li[3]/button[text()='Выход']").click()
+
+    def test_user_logo_click(self, driver):
+        driver.get("https://stellarburgers.nomoreparties.site/login")
+        driver.find_element(By.XPATH, ".//fieldset[1]//input").send_keys(e_mail)
+        driver.find_element(By.XPATH, ".//fieldset[2]//input").send_keys(passwd)
+        driver.find_element(By.XPATH, ".//button[text()='Войти']").click()
+        driver.find_element(By.XPATH, ".//a[@href='/account']").click()
+        driver.find_element(By.XPATH, './/div/header/nav/div/a[@href=\'/\']').click()
+        current_url = driver.current_url
+        assert current_url == 'https://stellarburgers.nomoreparties.site/'
+
+        driver.find_element(By.XPATH, "//a[@href='/account']").click()
+        WebDriverWait(driver, 3).until(expected_conditions.visibility_of_element_located(
+            (By.XPATH, ".//button[text()='Выход']")))
+        driver.find_element(By.XPATH, ".//ul/li[3]/button[text()='Выход']").click()
