@@ -1,6 +1,6 @@
 import random
 import pytest
-from tests.data import name
+from data import name
 from selenium import webdriver
 
 
@@ -27,7 +27,7 @@ def fake_email():
 def fake_password():
     chars = '+-/*!&$#?=@\u003C\u003EabcdefghijklnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890'
     num = 6
-    f_password =''
+    f_password = ''
     for i in range(num):
         f_password += random.choice(chars)
     return f_password
